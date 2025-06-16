@@ -1,12 +1,13 @@
-version: "3.9"
+version: '3.8'
+
 services:
-  db:
-    image: postgres:15
-    restart: always
+  postgres:
+    image: postgres:14
+    container_name: pereval_db
     environment:
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: pereval
     ports:
       - "5432:5432"
     volumes:

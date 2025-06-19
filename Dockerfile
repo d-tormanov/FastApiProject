@@ -1,10 +1,7 @@
 FROM python:3.12-slim
 
 RUN apt-get update && apt-get install -y curl ca-certificates bash && \
-    curl -LsSf https://astral.sh/uv/install.sh | bash && \
-    mv /root/.cargo/bin/uv /usr/local/bin/uv && \
-    chmod +x /usr/local/bin/uv && \
-    rm -rf /root/.cargo
+    curl -LsSf https://astral.sh/uv/install.sh | bash
 
 WORKDIR /app
 

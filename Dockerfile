@@ -5,11 +5,12 @@ RUN apt-get update && apt-get install -y curl && \
 
 WORKDIR /app
 
-COPY pyproject.toml /app/
+COPY pyproject.toml ./
 
-RUN /root/.cargo/bin/uv pip install -r <( /root/.cargo/bin/uv pip compile pyproject.toml )
+RUN /root/.cargo/bin/uv pip compile pyproject.toml -o requirements.txt \
+ && /root/.cargo/bin/uv pip install -r requirements.txt
 
-COPY . /app
+COPY . .
 
 EXPOSE 8000
 

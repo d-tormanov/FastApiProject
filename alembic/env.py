@@ -4,7 +4,10 @@ from alembic import context
 from sqlalchemy.ext.asyncio import AsyncEngine
 from db.db import engine
 from models.base import Base
+import os
+from dotenv import load_dotenv
 
+load_dotenv()
 config = context.config
 
 if config.config_file_name is not None:

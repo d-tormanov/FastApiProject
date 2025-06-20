@@ -3,7 +3,7 @@
 mkdir -p alembic/versions
 
 echo "Генерация миграций Alembiс..."
-alembic revision --autogenerate -m "autogen" || echo "📭 Нет изменений для миграции"
+alembic revision --autogenerate -m "autogen" || echo "Нет изменений для миграции"
 
 echo "Применение миграций Alembic..."
 alembic upgrade head

@@ -7,6 +7,7 @@ class AppSettings(BaseSettings):
     postgres_host: str
     postgres_port: int
     postgres_db: str
+    postgres_url: str
 
     @property
     def postgres_dsn(self) -> str:
